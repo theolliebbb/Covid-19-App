@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Covid.MainPage" BackgroundColor="Black">
+
+    <StackLayout>
+      
+<Picker x:Name="picker"
+        TextColor="GhostWhite"
+        
+        Title="Select a Prefecture"
+        TitleColor="GhostWhite"
+        BackgroundColor="Black"
+        ItemsSource="{Binding Prefectures}"
+         ItemDisplayBinding="{Binding NameJa}"
+        SelectedIndexChanged="picker_SelectedIndexChanged"
+        HorizontalOptions="CenterAndExpand"
+            VerticalOptions="CenterAndExpand"
+        
+        >
+        
+    
+</Picker>
+        
+        <ListView BackgroundColor="Black" IsVisible="False" x:Name="List" ItemsSource="{Binding Prefectures}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell >
+                        <StackLayout BackgroundColor="Black"
+                        Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal">
+                                <Button  BackgroundColor="Black" HorizontalOptions="CenterAndExpand" TextColor="Wheat" x:Name="VenueLabel" Text="{Binding NameJa}"  />
+                           
+                             
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+
+        
+
+    </StackLayout>
+
+</ContentPage>
+
