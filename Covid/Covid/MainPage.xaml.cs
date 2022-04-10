@@ -13,13 +13,17 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Covid.Models;
 using Covid.Views;
+using Newtonsoft.Json.Linq;
 
 namespace Covid
 {
+    
     public partial class MainPage : ContentPage
     {
+        
         public static List<Prefectures> Prefs = new List<Prefectures>();
         HttpClient client;
+       
         private ObservableCollection<Prefectures> plist;
         public ObservableCollection<Prefectures> Plist
         {
@@ -48,8 +52,16 @@ namespace Covid
             var resultJson = await httpClient.GetStringAsync("https://covid19-japan-web-api.vercel.app/api/v1/prefectures");
             var resultPrefectures = JsonConvert.DeserializeObject<Prefectures[]>(resultJson);
             picker.ItemsSource = resultPrefectures;
-            List.ItemsSource = resultPrefectures;
+            
+            var resultJson2 = await httpClient.GetStringAsync("https://corona.lmao.ninja/v2/countries?yesterday=&sort=");
+            var root = JObject.Parse(resultJson2);
+            var parsedObject = JObject.Parse(resultJson2);
+            var popupJson = parsedObject.ToString();
+            var countries = JsonConvert.DeserializeObject<Root[]>(popupJson);
+           /* picker2.ItemsSource = countries;*/
         }
+    
+        
         private async void EditEvent(object sender, ItemTappedEventArgs e)
         {
 
@@ -67,13 +79,16 @@ namespace Covid
             App.Current.MainPage = new Pref_Data(details);
         }
 
-        void Button_Clicked(System.Object sender, System.EventArgs e)
+        async void Button_Clicked(System.Object sender, System.EventArgs e)
         {
-            var details = picker.SelectedItem as Prefectures;
+            var httpClient = new HttpClient();
+            var resultJson2 = await httpClient.GetStringAsync("https://covid19-japan-web-api.vercel.app/api/v1/total");
 
-
-            App.Current.MainPage = new Pref_Data(details);
+            var resultPrefectures = JsonConvert.DeserializeObject<Root>(resultJson2);
+            var details = resultPrefectures;
+            App.Current.MainPage = new CountryGraph(details);
         }
+
     }
 }
             

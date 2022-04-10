@@ -14,14 +14,32 @@
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Xamarin.Forms.PancakeView" Version="2.3.0.759" />
+    <PackageReference Include="Syncfusion.Xamarin.SfChart" Version="20.1.0.47" />
+    <PackageReference Include="Microcharts" Version="0.9.5.9" />
+    <PackageReference Include="Microcharts.Forms" Version="0.9.5.9" />
+    <PackageReference Include="OxyPlot.Xamarin.Forms" Version="1.0.0" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Models\" />
     <None Remove="Newtonsoft.Json" />
     <None Remove="Views\" />
+    <None Remove="Xamarin.Forms.PancakeView" />
+    <None Remove="Alex.ttf" />
+    <None Remove="Open.ttf" />
+    <None Remove="Syncfusion.Xamarin.SfChart" />
+    <None Remove="Microcharts" />
+    <None Remove="Microcharts.Forms" />
+    <None Remove="OxyPlot.Xamarin.Forms" />
+    <None Remove="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="Views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Alex.ttf" />
+    <EmbeddedResource Include="Open.ttf" />
   </ItemGroup>
 </Project>

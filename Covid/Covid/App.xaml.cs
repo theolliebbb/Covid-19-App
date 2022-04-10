@@ -1,7 +1,8 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
+[assembly: ExportFont("Alex.ttf", Alias = "Alex")]
+[assembly: ExportFont("Open.ttf", Alias = "Open")]
 namespace Covid
 {
     public partial class App : Application
