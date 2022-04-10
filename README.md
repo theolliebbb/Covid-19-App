@@ -5,7 +5,11 @@
 
 - Puts data into a picker and automatically generates individual pages for each Prefecture.
 
-- Autoomatically generates pages for each prefecture
+- Automatically generates pages for each prefecture
+
+- Added nationwide data
+
+- Integrated microchart Graphs
 
 
 
