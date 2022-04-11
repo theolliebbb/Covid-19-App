@@ -1,5 +1,5 @@
 # Covid 19 App
- Displays up-to-date Covid date for all Japanese
+ Displays up-to-date Covid date for all Japanese Corona Cases
  
  - CONSUMES the Covid-19 Japan Web Api, Covid-19 Rich Data Services API, and the Novel Covid API
 
