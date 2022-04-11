@@ -5,9 +5,9 @@
     <yummy:PancakeView BackgroundGradientStartPoint="0,0" BackgroundGradientEndPoint="0,1">
    <yummy:PancakeView.BackgroundGradientStops>
       <yummy:GradientStopCollection>
-         <yummy:GradientStop Color="Black" Offset="0.8" />
-         
-         <yummy:GradientStop Color="LawnGreen" Offset="1" />
+         <yummy:GradientStop Color="Black" Offset="0.5" />
+         <yummy:GradientStop Color="Black" Offset="0.5" />
+         <yummy:GradientStop Color="DarkGreen" Offset="1" />
       </yummy:GradientStopCollection>
    </yummy:PancakeView.BackgroundGradientStops>
     <StackLayout>
@@ -31,8 +31,9 @@
 </Picker>
 
         <Button Text="CountryWide Data" FontSize="Title" VerticalOptions="CenterAndExpand" FontFamily="Open" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" TextColor="White" Clicked="Button_Clicked"/>
+        <Button Text="CountryWide Case Trend" FontSize="Title" VerticalOptions="CenterAndExpand" FontFamily="Open" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" TextColor="White" Clicked="Button_Clicked2"/>
+        <Button Text="CountryWide 7 Days" FontSize="Title" VerticalOptions="CenterAndExpand" FontFamily="Open" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" TextColor="White" Clicked="Button_Clicked_1"/>
         
-
         
 
     </StackLayout>

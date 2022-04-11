@@ -23,7 +23,7 @@ namespace Covid
         
         public static List<Prefectures> Prefs = new List<Prefectures>();
         HttpClient client;
-       
+        
         private ObservableCollection<Prefectures> plist;
         public ObservableCollection<Prefectures> Plist
         {
@@ -89,6 +89,44 @@ namespace Covid
             App.Current.MainPage = new CountryGraph(details);
         }
 
+        async void Button_Clicked2(System.Object sender, System.EventArgs e)
+        {
+            var httpClient = new HttpClient();
+            
+            var resultJson3 = await httpClient.GetStringAsync("https://covid19.richdataservices.com/rds/api/query/int/jhu_country/select?cols=date_stamp,cnt_confirmed,cnt_death,cnt_recovered&where=(iso3166_1=JP)&format=amcharts&limit=6000");
+            
+            var resultBig = JsonConvert.DeserializeObject<Root2>(resultJson3);
+            var details = resultBig;
+            
+
+            App.Current.MainPage = new CountryToday(details);
+        }
+
+       async void Button_Clicked_1(System.Object sender, System.EventArgs e)
+        {
+            var httpClient = new HttpClient();
+
+            var resultJson3 = await httpClient.GetStringAsync("https://corona.lmao.ninja/v2/historical/Japan?lastdays=31");
+
+            var resultBig = JsonConvert.DeserializeObject<Root3>(resultJson3);
+            var details = resultBig;
+
+
+            App.Current.MainPage = new Countrybyday(details);
+        }
+
+       async void Button_Clicked_2(System.Object sender, System.EventArgs e)
+        {
+            var httpClient = new HttpClient();
+
+            var resultJson4 = await httpClient.GetStringAsync("https://corona.lmao.ninja/v2/continents?yesterday=true&sort");
+
+            var myDeserializedClass = JsonConvert.DeserializeObject<Root4[]>(resultJson4);
+            var details = myDeserializedClass;
+
+
+            App.Current.MainPage = new Global(details);
+        }
     }
 }
             

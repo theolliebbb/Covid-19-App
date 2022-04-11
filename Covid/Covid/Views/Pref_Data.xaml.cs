@@ -25,7 +25,7 @@ namespace Covid.Views
             {
                 Label = "Cases",
                 ValueLabel = $"{prefDetails.Cases}",
-                Color = SKColor.Parse("#2c3e50")
+                Color = SKColor.Parse("#77d065")
             },
             new ChartEntry(prefDetails.Deaths)
             {

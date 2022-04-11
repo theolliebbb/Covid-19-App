@@ -31,19 +31,19 @@ namespace Covid.Views
             {
                 Label = "Discharges",
                 ValueLabel = $"{prefDetails1.discharge}",
-                Color = SKColor.Parse("#2c3e50")
+                Color = SKColor.Parse("#77d065")
             },
             new ChartEntry(prefDetails1.hospitalize)
             {
                 Label = "Hospitalized",
                 ValueLabel = $"{prefDetails1.hospitalize}",
-                Color = SKColor.Parse("#2c3e50")
+                Color = SKColor.Parse("#b455b6")
             },
             new ChartEntry(prefDetails1.pcr)
             {
                 Label = "Pcr Tests",
                 ValueLabel = $"{prefDetails1.pcr}",
-                Color = SKColor.Parse("#2c3e50")
+                Color = SKColor.Parse("#3498db")
             },
             new ChartEntry(prefDetails1.positive)
             {
@@ -55,7 +55,7 @@ namespace Covid.Views
             {
                 Label = "Severe Cases",
                 ValueLabel = $"{prefDetails1.severe}",
-                Color = SKColor.Parse("#2c3e50")
+                Color = SKColor.Parse("#77d065")
             },
     
             

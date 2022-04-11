@@ -1,8 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace Covid.Models
 {
+    public class DateOperation
+    {
+       
+        DateTimeOffset Today = new DateTimeOffset(DateTime.Now,
+                                              TimeSpan.Zero);
+        string m2 = DateTime.Now.AddDays(-2).ToString();
+        int ok = 123;
+    }
     public partial class Prefectures
     {
         [JsonProperty("id")]
@@ -27,10 +36,11 @@ namespace Covid.Models
         public long Deaths { get; set; }
     }
 
-
-
     public class Cases
     {
+        [JsonProperty("3/10/22")]
+        public int _31022 { get; set; }
+
         [JsonProperty("3/11/22")]
         public int _31122 { get; set; }
 
@@ -124,6 +134,9 @@ namespace Covid.Models
 
     public class Deaths
     {
+        [JsonProperty("3/10/22")]
+        public int _31022 { get; set; }
+
         [JsonProperty("3/11/22")]
         public int _31122 { get; set; }
 
@@ -217,6 +230,9 @@ namespace Covid.Models
 
     public class Recovered
     {
+        [JsonProperty("3/10/22")]
+        public int _31022 { get; set; }
+
         [JsonProperty("3/11/22")]
         public int _31122 { get; set; }
 
@@ -308,6 +324,7 @@ namespace Covid.Models
         public int _4922 { get; set; }
     }
 
+
     public class Timeline
     {
         public Cases cases { get; set; }
@@ -324,6 +341,17 @@ namespace Covid.Models
         public int @long { get; set; }
         public string flag { get; set; }
     }
+    public class DataProvider
+    {
+        public string date_stamp { get; set; }
+        public int cnt_confirmed { get; set; }
+        public int cnt_death { get; set; }
+        public int cnt_recovered { get; set; }
+    }
+    public class Root2
+    {
+        public List<DataProvider> dataProvider { get; set; }
+    }
 
     public class Root
     {
@@ -337,6 +365,40 @@ namespace Covid.Models
         public int symptom_confirming { get; set; }
     }
 
+
+    public class Root3
+    {
+        public string country { get; set; }
+        public List<string> province { get; set; }
+        public Timeline timeline { get; set; }
+    }
+    public class Root4
+    {
+        public object updated { get; set; }
+        public int cases { get; set; }
+        public int todayCases { get; set; }
+        public int deaths { get; set; }
+        public int todayDeaths { get; set; }
+        public int recovered { get; set; }
+        public int todayRecovered { get; set; }
+        public int active { get; set; }
+        public int critical { get; set; }
+        public double casesPerOneMillion { get; set; }
+        public double deathsPerOneMillion { get; set; }
+        public long tests { get; set; }
+        public double testsPerOneMillion { get; set; }
+        public long population { get; set; }
+        public string continent { get; set; }
+        public double activePerOneMillion { get; set; }
+        public double recoveredPerOneMillion { get; set; }
+        public double criticalPerOneMillion { get; set; }
+        public List<string> countries { get; set; }
+
+        internal void Add(Root4 data)
+        {
+            throw new NotImplementedException();
+        }
+    }
 
 
 
